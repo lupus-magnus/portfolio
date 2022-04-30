@@ -9,8 +9,8 @@ export const Hero: React.FC = () => {
   const theme = useTheme();
   return (
     <Fold>
+      <S.BackgroundBlob src="/vectors/hero_vector.svg" alt="vector" />
       <Grid>
-        <S.BackgroundBlob src="/vectors/hero_vector.svg" alt="vector" />
         <S.ProfileHero src="/images/profile_hero.png" />
         <S.Presentation>
           <h1>Hey, there!</h1>

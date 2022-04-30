@@ -46,7 +46,7 @@ export const Presentation = styled.div`
 export const BackgroundBlob = styled.img`
   position: absolute;
   z-index: -1;
-  width: 90%;
+  height: 90%;
 
   left: 50%;
   top: 50%;
@@ -63,6 +63,7 @@ export const BackgroundBlob = styled.img`
 export const ProfileHero = styled.img`
   position: absolute;
   right: 0;
+  max-height: 90%;
 
   @media (max-width: 768px) {
     display: none;
