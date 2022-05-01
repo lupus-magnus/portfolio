@@ -5,5 +5,8 @@ export const Container = styled.section`
 
   padding: 5rem 0;
   min-height: 100vh;
+
+  overflow: hidden;
+
   width: 100%;
 `;

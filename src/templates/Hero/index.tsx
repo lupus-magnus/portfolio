@@ -1,20 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
 
 import { useTheme } from "@emotion/react";
-import { BsGithub } from "react-icons/bs";
+
 import React from "react";
-import {
-  Fold,
-  Grid,
-  HeroBlob,
-  SocialMediaBox,
-  SocialMediaRow,
-} from "../../components";
-import {
-  blobAnimation,
-  presentationAnimation,
-  profileHeroAnimation,
-} from "./animations";
+import { Fold, Grid, HeroBlob, SocialMediaRow } from "../../components";
+import { presentationAnimation, profileHeroAnimation } from "./animations";
 
 import * as S from "./styles";
 
@@ -22,11 +12,6 @@ export const Hero: React.FC = () => {
   const theme = useTheme();
   return (
     <Fold>
-      {/* <S.BackgroundBlob
-        {...blobAnimation}
-        src="/vectors/hero_vector.svg"
-        alt="vector"
-      /> */}
       <HeroBlob />
       <Grid>
         <S.ProfileHero

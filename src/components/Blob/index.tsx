@@ -4,21 +4,10 @@ import { motion } from "framer-motion";
 import * as S from "./styles";
 import { theme } from "../../styles/theme";
 
-const svgVariants = {
-  hidden: { rotate: -30 },
-  visible: {
-    rotate: 0,
-    transition: { duration: 1.5, delay: 0.5 },
-  },
-};
-
 export const HeroBlob: React.FC = () => {
   return (
     <>
       <S.Blob
-        variants={svgVariants}
-        initial="hidden"
-        animate="visible"
         width="1023"
         height="749"
         viewBox="0 0 1023 749"
@@ -27,6 +16,7 @@ export const HeroBlob: React.FC = () => {
       >
         <motion.path
           animate={{
+            rotate: [-30, 0, 0],
             pathLength: [0, 1, 1],
             opacity: [0, 1, 1],
             fill: [theme.colors.background, theme.colors.background, "#333"],

@@ -17,7 +17,7 @@ export const SectionTitle: React.FC<Props> = ({ children, icon }) => {
       <S.Title
         initial={{ x: 500, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
-        transition={{ delay: 0.3, duration: 0.5 }} // type: "tween"
+        transition={{ duration: 0.5 }} // type: "tween"
       >
         <>
           {children}
