@@ -13,5 +13,7 @@ export const GridStructure = styled.div<{ noPadding: boolean }>`
     padding: 3rem 2rem;
     margin: auto;
     ${noPadding && noPaddingModifier()}
+
+    overflow-y: hidden;
   `}
 `;
