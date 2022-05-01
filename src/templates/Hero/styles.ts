@@ -16,13 +16,13 @@ export const Presentation = styled(motion.div)`
 
     & h1 {
       font-weight: 700;
-      font-size: 4rem;
+      font-size: 3.5rem;
       color: ${theme.colors.green};
     }
 
     & p {
       font-weight: 600;
-      font-size: 1.875rem;
+      font-size: 1.375rem;
       color: ${theme.colors.gray500};
 
       padding-bottom: 3rem;

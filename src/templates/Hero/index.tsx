@@ -1,8 +1,15 @@
 /* eslint-disable react/no-unescaped-entities */
+
 import { useTheme } from "@emotion/react";
 import { BsGithub } from "react-icons/bs";
 import React from "react";
-import { Fold, Grid, SocialMediaBox } from "../../components";
+import {
+  Fold,
+  Grid,
+  HeroBlob,
+  SocialMediaBox,
+  SocialMediaRow,
+} from "../../components";
 import {
   blobAnimation,
   presentationAnimation,
@@ -15,11 +22,12 @@ export const Hero: React.FC = () => {
   const theme = useTheme();
   return (
     <Fold>
-      <S.BackgroundBlob
+      {/* <S.BackgroundBlob
         {...blobAnimation}
         src="/vectors/hero_vector.svg"
         alt="vector"
-      />
+      /> */}
+      <HeroBlob />
       <Grid>
         <S.ProfileHero
           {...profileHeroAnimation}
@@ -32,8 +40,8 @@ export const Hero: React.FC = () => {
             for more than 4 years now. I currently work with Reactjs, Nextjs and
             TypeScript.
           </p>
+          <SocialMediaRow />
         </S.Presentation>
-        <SocialMediaBox icon={<BsGithub />} />
       </Grid>
     </Fold>
   );

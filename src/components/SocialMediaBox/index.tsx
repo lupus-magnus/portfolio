@@ -9,15 +9,24 @@ type Props = {
 export const SocialMediaBox: React.FC<Props> = ({ icon }) => {
   const theme = useTheme();
 
+  const variant = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0 },
+  };
+
   const CustomIcon: React.FC = () =>
     icon
-      ? React.cloneElement(icon, { size: 32, color: theme.colors.background })
+      ? React.cloneElement(icon, { size: 32, color: theme.colors.gray800 })
       : null;
 
   return (
     <S.Box
-    // whileHover={{ scale: 1.05 }}
-    // transition={{ duration: 0.5, type: "tween" }}
+      whileHover={{
+        scale: 1.1,
+        cursor: "pointer",
+        transition: { type: "spring" },
+      }}
+      variants={variant}
     >
       <CustomIcon />
     </S.Box>
