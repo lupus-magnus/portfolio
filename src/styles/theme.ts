@@ -9,6 +9,8 @@ export const theme = {
     gray700: "#b7b7b7",
     gray800: "#7e7e7e",
     gray850: "#555",
+    gray900: "#2f2f2f",
+    gray950: "#333333",
   },
 };
 
