@@ -4,3 +4,4 @@ export * from "./SectionTitle";
 export * from "./SocialMediaBox";
 export * from "./SocialMediaRow";
 export * from "./Blob";
+export * from "./PopupContact";
