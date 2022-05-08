@@ -1,7 +1,19 @@
-import { css } from "@emotion/react";
+import { css, keyframes } from "@emotion/react";
 import styled from "@emotion/styled";
 import { motion } from "framer-motion";
 import { rgba } from "polished";
+import { MdOutlineClose } from "react-icons/md";
+
+const popup = keyframes`
+  from{
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to{
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
 
 export const PopupContainer = styled(motion.form)`
   ${({ theme }) => css`
@@ -9,7 +21,7 @@ export const PopupContainer = styled(motion.form)`
     width: 464px;
 
     bottom: 2rem;
-    right: 0.5rem;
+    right: 5rem;
     border-radius: 0.5rem;
 
     background-color: ${theme.colors.gray900};
@@ -19,10 +31,22 @@ export const PopupContainer = styled(motion.form)`
     align-items: stretch;
     justify-content: space-between;
 
-    transition: 500ms;
+    animation: ${popup} 500ms 3s backwards;
 
     @media (max-width: 768px) {
       display: none;
+    }
+  `}
+`;
+
+export const CloseButton = styled(MdOutlineClose)`
+  ${({ theme }) => css`
+    color: ${theme.colors.gray800};
+    transition: 300ms;
+
+    &:hover {
+      transform: rotate(90deg);
+      cursor: pointer;
     }
   `}
 `;
@@ -64,7 +88,7 @@ export const PopupLabel = styled.label<{ sent?: boolean }>`
 
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
   `}
 `;
 

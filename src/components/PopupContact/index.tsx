@@ -1,16 +1,20 @@
 import { useTheme } from "@emotion/react";
-import React, {
-  FormEvent,
-  MutableRefObject,
-  RefObject,
-  useRef,
-  useState,
-} from "react";
-import { MdOutlineArrowForwardIos, MdCheck } from "react-icons/md";
+import React, { FormEvent, useState } from "react";
+import {
+  MdOutlineArrowForwardIos,
+  MdCheck,
+  MdOutlineClose,
+} from "react-icons/md";
+
 import * as S from "./styles";
 
-export const PopupContact: React.FC = () => {
+type PopupProps = {
+  constraints?: React.RefObject<Element> | undefined;
+};
+
+export const PopupContact: React.FC<PopupProps> = ({ constraints }) => {
   const theme = useTheme();
+  const [isShowing, setIsShowing] = useState(true);
   const [messageSent, setMessageSent] = useState(false);
 
   const handleSubmit = (e: FormEvent) => {
@@ -20,19 +24,15 @@ export const PopupContact: React.FC = () => {
     }, 1500);
   };
 
+  if (!isShowing) {
+    return <></>;
+  }
+
   return (
     <S.PopupContainer
-      initial={{ opacity: 0 }}
-      animate={{
-        y: [20, 0],
-        opacity: [0, 1],
-      }}
-      transition={{
-        delay: 4,
-        type: "spring",
-        duration: 0.8,
-      }}
       onSubmit={handleSubmit}
+      drag
+      dragConstraints={constraints}
     >
       <S.PopupForm>
         {messageSent ? (
@@ -42,7 +42,10 @@ export const PopupContact: React.FC = () => {
           </S.PopupLabel>
         ) : (
           <>
-            <S.PopupLabel>Get in touch!</S.PopupLabel>
+            <S.PopupLabel>
+              Get in touch!{" "}
+              <S.CloseButton onClick={() => setIsShowing(false)} />
+            </S.PopupLabel>
             <S.PopupInput placeholder="Send a message, feedback, or just say something" />
           </>
         )}
