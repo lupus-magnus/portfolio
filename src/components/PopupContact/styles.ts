@@ -17,8 +17,9 @@ const popup = keyframes`
 
 export const PopupContainer = styled(motion.form)`
   ${({ theme }) => css`
-    position: absolute;
+    position: fixed;
     width: 464px;
+    z-index: 1000;
 
     bottom: 2rem;
     right: 5rem;
@@ -31,7 +32,7 @@ export const PopupContainer = styled(motion.form)`
     align-items: stretch;
     justify-content: space-between;
 
-    animation: ${popup} 500ms 3s backwards;
+    animation: ${popup} 500ms 8s backwards;
 
     @media (max-width: 768px) {
       display: none;

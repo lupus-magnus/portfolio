@@ -1,10 +1,6 @@
 import { useTheme } from "@emotion/react";
 import React, { FormEvent, useState } from "react";
-import {
-  MdOutlineArrowForwardIos,
-  MdCheck,
-  MdOutlineClose,
-} from "react-icons/md";
+import { MdOutlineArrowForwardIos, MdCheck } from "react-icons/md";
 
 import * as S from "./styles";
 
@@ -21,7 +17,7 @@ export const PopupContact: React.FC<PopupProps> = ({ constraints }) => {
     e.preventDefault();
     setTimeout(() => {
       setMessageSent(true);
-    }, 1500);
+    }, 500);
   };
 
   if (!isShowing) {
