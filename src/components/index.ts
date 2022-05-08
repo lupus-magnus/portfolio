@@ -5,3 +5,4 @@ export * from "./SocialMediaBox";
 export * from "./SocialMediaRow";
 export * from "./Blob";
 export * from "./PopupContact";
+export * from "./ProjectTemplate";

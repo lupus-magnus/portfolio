@@ -2,9 +2,7 @@ import { useTheme } from "@emotion/react";
 import React from "react";
 import { BsFillGearFill } from "react-icons/bs";
 
-import { Fold, Grid, SectionTitle } from "../../components";
-
-// import * as S from "./styles";
+import { Fold, Grid, SectionTitle, ProjectTemplate } from "../../components";
 
 export const ProjectsSection: React.FC = () => {
   const theme = useTheme();
@@ -12,6 +10,7 @@ export const ProjectsSection: React.FC = () => {
     <Fold>
       <Grid>
         <SectionTitle icon={<BsFillGearFill />}>Projects</SectionTitle>
+        <ProjectTemplate />
       </Grid>
     </Fold>
   );
