@@ -3,13 +3,7 @@
 import { useTheme } from "@emotion/react";
 
 import React, { useRef } from "react";
-import {
-  Fold,
-  Grid,
-  HeroBlob,
-  PopupContact,
-  SocialMediaRow,
-} from "../../components";
+import { Fold, Grid, HeroBlob, SocialMediaRow } from "../../components";
 import { presentationAnimation, profileHeroAnimation } from "./animations";
 
 import * as S from "./styles";
@@ -34,7 +28,6 @@ export const Hero: React.FC = () => {
           </p>
           <SocialMediaRow />
         </S.Presentation>
-        <PopupContact />
       </Grid>
     </Fold>
   );
