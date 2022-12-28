@@ -32,7 +32,7 @@ export const PopupContainer = styled(motion.form)`
     align-items: stretch;
     justify-content: space-between;
 
-    animation: ${popup} 500ms 8s backwards;
+    animation: ${popup} 600ms;
 
     @media (max-width: 768px) {
       display: none;

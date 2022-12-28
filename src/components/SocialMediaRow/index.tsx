@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
+import { ContactBoxContext } from "../../contexts/ContactBoxContext";
 import { SocialMediaBox } from "../SocialMediaBox";
 
 import * as S from "./styles";
 
 export const SocialMediaRow: React.FC = ({ children }) => {
+  const { setDisplay: setDisplayContactBox } = useContext(ContactBoxContext);
+
   const childrenAnimation = {
     hidden: {
       opacity: 0,
@@ -26,7 +29,10 @@ export const SocialMediaRow: React.FC = ({ children }) => {
     <S.Container initial="hidden" animate="show" variants={childrenAnimation}>
       <SocialMediaBox icon={<BsGithub />} />
       <SocialMediaBox icon={<BsLinkedin />} />
-      <SocialMediaBox icon={<MdEmail />} />
+      <SocialMediaBox
+        icon={<MdEmail />}
+        onClick={() => setDisplayContactBox(true)}
+      />
     </S.Container>
   );
 };

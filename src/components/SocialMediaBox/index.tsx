@@ -4,9 +4,10 @@ import * as S from "./styles";
 
 type Props = {
   icon?: ReactElement;
+  onClick?: () => void;
 };
 
-export const SocialMediaBox: React.FC<Props> = ({ icon }) => {
+export const SocialMediaBox: React.FC<Props> = ({ icon, onClick }) => {
   const theme = useTheme();
 
   const variant = {
@@ -27,6 +28,7 @@ export const SocialMediaBox: React.FC<Props> = ({ icon }) => {
         transition: { type: "spring" },
       }}
       variants={variant}
+      onClick={onClick}
     >
       <CustomIcon />
     </S.Box>
