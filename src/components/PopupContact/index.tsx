@@ -1,6 +1,7 @@
 import { useTheme } from "@emotion/react";
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, useContext, useState } from "react";
 import { MdOutlineArrowForwardIos, MdCheck } from "react-icons/md";
+import { ContactBoxContext } from "../../contexts/ContactBoxContext";
 
 import * as S from "./styles";
 
@@ -10,7 +11,7 @@ type PopupProps = {
 
 export const PopupContact: React.FC<PopupProps> = ({ constraints }) => {
   const theme = useTheme();
-  const [isShowing, setIsShowing] = useState(true);
+  const { setDisplay: setDisplayContactBox } = useContext(ContactBoxContext);
   const [messageSent, setMessageSent] = useState(false);
 
   const handleSubmit = (e: FormEvent) => {
@@ -19,10 +20,6 @@ export const PopupContact: React.FC<PopupProps> = ({ constraints }) => {
       setMessageSent(true);
     }, 500);
   };
-
-  if (!isShowing) {
-    return <></>;
-  }
 
   return (
     <S.PopupContainer
@@ -40,7 +37,7 @@ export const PopupContact: React.FC<PopupProps> = ({ constraints }) => {
           <>
             <S.PopupLabel>
               Get in touch!{" "}
-              <S.CloseButton onClick={() => setIsShowing(false)} />
+              <S.CloseButton onClick={() => setDisplayContactBox(false)} />
             </S.PopupLabel>
             <S.PopupInput placeholder="Send a message, feedback, or just say something" />
           </>

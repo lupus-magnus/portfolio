@@ -2,19 +2,28 @@
 
 import { useTheme } from "@emotion/react";
 
-import React, { useRef } from "react";
-import { Fold, Grid, HeroBlob, SocialMediaRow } from "../../components";
+import React, { useContext, useRef, useState } from "react";
+import {
+  Fold,
+  Grid,
+  HeroBlob,
+  PopupContact,
+  SocialMediaRow,
+} from "../../components";
+import { ContactBoxContext } from "../../contexts/ContactBoxContext";
 import { presentationAnimation, profileHeroAnimation } from "./animations";
 
 import * as S from "./styles";
 
 export const Hero: React.FC = () => {
+  const { display: displayContactBox } = useContext(ContactBoxContext);
   const theme = useTheme();
+  const mainRef = useRef(null);
 
   return (
     <Fold>
       <HeroBlob />
-      <Grid>
+      <Grid ref={mainRef}>
         <S.ProfileHero
           {...profileHeroAnimation}
           src="/images/profile_hero.png"
@@ -28,6 +37,7 @@ export const Hero: React.FC = () => {
           </p>
           <SocialMediaRow />
         </S.Presentation>
+        {displayContactBox && <PopupContact constraints={mainRef} />}
       </Grid>
     </Fold>
   );
